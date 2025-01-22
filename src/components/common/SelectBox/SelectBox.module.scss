@@ -1,0 +1,72 @@
+.contSelect {
+  position: relative;
+  width: 200px;
+
+  .btnSelect {
+    width: 100%;
+    padding: 13px 30px 13px 14px;
+    font-size: 12px;
+    line-height: 14px;
+    background-color: #fff;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    background: url("images/icon-Triangle-down.png") center right 14px no-repeat;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      border: 1px solid #9b51e0;
+      outline: 3px solid #f8e4ff;
+    }
+
+    &.on {
+      background: url("images/icon-Triangle-up.png") center right 14px no-repeat;
+    }
+  }
+
+  .listMember {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 49px;
+    left: 0;
+    border: 1px solid #c4c4c4;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    list-style: none;
+
+    li {
+      height: 40px;
+      padding: 5px 8px;
+      box-sizing: border-box;
+
+      button {
+        width: 100%;
+        padding: 7px 10px;
+        border: none;
+        background-color: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: left;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        &:hover,
+        &:focus {
+          background-color: #f8e4ff;
+        }
+      }
+    }
+  }
+
+  .btnSelect.on + .listMember {
+    display: block;
+  }
+}
