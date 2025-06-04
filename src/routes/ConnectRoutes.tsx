@@ -9,7 +9,7 @@ const ConnectRoutes = () => {
 
   useEffect(() => {
     // WebSocket 연결
-    const ws = new WebSocket('wss://danji-talk-frontend-rosy.vercel.app/ws/chat'); // 실제 주소로 변경
+    const ws = new WebSocket('wss://danji-talk-frontend-rosy.vercel.app/api/ws/chat'); // 실제 주소로 변경
     socketRef.current = ws;
 
     ws.onopen = () => {
