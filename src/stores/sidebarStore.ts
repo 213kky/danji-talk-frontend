@@ -25,6 +25,7 @@ export const useSidebarStore = create<SidebarState>((set) => ({
     { path: '/visitor-car', label: '방문차량등록' },
     { path: '/my-reservations', label: '내 예약 정보' },
     { path: '/register-complex', label: '단지 등록' },
+    { path: '/test-connect', label: '소켓연결' },
   ],
   isOpen: false,
   isClosing: false,

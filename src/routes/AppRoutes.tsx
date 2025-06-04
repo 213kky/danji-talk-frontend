@@ -6,6 +6,7 @@ import SettingsRoutes from './SettingsRoutes';
 import CommunityRoutes from './CommunityRoutes';
 import MyPageRoutes from './MyPageRoutes';
 import ComplexRoutes from './ComplexRoutes';
+import ConnectRoutes from './ConnectRoutes';
 import ComplexInfo from '../pages/Complex/ComplexInfo';
 import { LoginPage } from '../pages/Login/LoginPage';
 import { RegisterPage } from '../pages/Register/RegisterPage';
@@ -125,6 +126,10 @@ const AppRoutes = () => {
         <Route element={<ComplexRoutes />}>
           <Route path="/complex-info" element={<ComplexInfo />} />
           <Route path="/register-complex" element={<RegisterComplex />} />
+        </Route>
+
+        {/* 소켓연결 라우트 */}
+        <Route path="/test-connect" element={<ConnectRoutes />}>
         </Route>
       </Routes>
     </Suspense>

@@ -34,6 +34,10 @@
       { 
         "source": "/(.*)", 
         "destination": "/index.html" 
+      },
+      { 
+        "source": "/api/ws/:path*",
+        "destination": "ws://danjitalk.duckdns.org/api/ws/:path*" 
       }
     ]
   } 
