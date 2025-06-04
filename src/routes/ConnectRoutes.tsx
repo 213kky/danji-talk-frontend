@@ -9,29 +9,23 @@ const ConnectRoutes = () => {
 
   useEffect(() => {
     // WebSocket 연결
-    const ws = new WebSocket('wss://danji-talk-frontend-rosy.vercel.app/api/ws/chat'); // 실제 주소로 변경
-    socketRef.current = ws;
-
-    ws.onopen = () => {
-      console.log('✅ WebSocket connected');
-    };
-
-    ws.onmessage = (event) => {
-      console.log('📨 Received:', event.data);
-      setMessages((prev) => [...prev, event.data]); // 폴딩
-    };
-
-    ws.onclose = () => {
-      console.log('❌ WebSocket closed');
-    };
-
-    ws.onerror = (err) => {
-      console.error('⚠️ WebSocket error', err);
-    };
-
-    return () => {
-      ws.close();
-    };
+    stompClient = new Client({
+        brokerURL: '/api/ws/chat',
+        reconnectDelay: 600000,
+        debug: (str: string) => console.log('[STOMP]', str),
+    
+        onConnect: () => {
+          console.log('🟢 STOMP connected');
+        },
+        onStompError: (frame) => {
+          console.error('❌ STOMP error:', frame);
+        },
+        onWebSocketClose: () => {
+          console.warn('🔌 WebSocket connection closed');
+        },
+      });
+    
+      stompClient.activate();
   }, []);
 
   const sendMessage = () => {
