@@ -12,7 +12,7 @@ export const connectChatSocket = (
   }
 
   stompClient = new Client({
-    brokerURL: 'ws://localhost:5173/api/ws/chat',
+    brokerURL: 'wss://wss://danjitalk.duckdns.org/api/ws/chat',
     reconnectDelay: 600000,
     debug: (str: string) => console.log('[STOMP]', str),
 
