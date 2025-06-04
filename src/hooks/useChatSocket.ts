@@ -1,4 +1,5 @@
 import { Client, IMessage, StompSubscription } from '@stomp/stompjs';
+import SockJS from 'sockjs-client';
 
 let stompClient: Client | null = null;
 let subscriptions: Record<string, StompSubscription> = {};
@@ -12,7 +13,7 @@ export const connectChatSocket = (
   }
 
   stompClient = new Client({
-    brokerURL: 'wss://danjitalk.duckdns.org/api/ws/chat',
+    webSocketFactory: () => new SockJS("/api/ws/chat"), // proxy를 통한 접속
     reconnectDelay: 600000,
     debug: (str: string) => console.log('[STOMP]', str),
 
