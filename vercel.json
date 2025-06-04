@@ -28,7 +28,7 @@
         "destination": "https://danjitalk.duckdns.org/api/:path*"
       },
       { 
-        "source": "/danji-talk-frontend/:path*",
+        "source": "/danji-talk-frontend-rosy/:path*",
         "destination": "/:path*"
       },
       { 
