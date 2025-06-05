@@ -209,8 +209,6 @@ const ChatRoom = () => {
     (member: MemberInfo) => member.id !== myId
   );
 
-  const nav = useNavigate();
-
   return (
     <>
       <Header
@@ -219,7 +217,6 @@ const ChatRoom = () => {
         hasBackButton={true}
         hasRightButton={true}
         buttonText="나가기"
-        onClickButton={() => nav(-1)}
       />
       <ChatNotice />
       <ChatDateBadge />
