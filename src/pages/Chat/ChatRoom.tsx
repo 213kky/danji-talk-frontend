@@ -173,6 +173,7 @@ const ChatRoom = () => {
 
   useEffect(() => {
     if (directChats?.data?.chatMessageResponses) {
+      console.log('directChats?.data?: ', directChats?.data);
       setMessages(directChats.data.chatMessageResponses);
     }
   }, [directChats]);
