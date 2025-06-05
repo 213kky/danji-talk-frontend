@@ -7,6 +7,7 @@ import Facilities from '../pages/Facilities/Facilities';
 import Favorites from '../pages/Favorites/Favorites';
 import ProtectedRoute from './ProtectedRoute';
 import { useLocation } from 'react-router-dom';
+import ChatRoom from '../pages/Chat/ChatRoom';
 
 const HomePage = () => (
   <>
@@ -51,6 +52,8 @@ const MainRoutes = () => {
         return <FacilitiesPage />;
       case '/favorites':
         return <FavoritesPage />;
+      case '/chatroom/:roomId':
+        return <ChatRoom />;
       default:
         return <Outlet />;
     }
