@@ -10,7 +10,7 @@ const ConnectRoutes = () => {
   useEffect(() => {
     // WebSocket 연결
     stompClient = new Client({
-        brokerURL: 'wss://danjitalk.duckdns.org/api/ws/chat?token=eyJ',
+        brokerURL: '/api/ws/chat',
         reconnectDelay: 600000,
         debug: (str: string) => console.log('[STOMP]', str),
     

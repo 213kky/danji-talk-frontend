@@ -37,7 +37,7 @@
       },
       { 
         "source": "/api/ws/:path*",
-        "destination": "ws://danjitalk.duckdns.org/api/ws/:path*" 
+        "destination": "wss://danjitalk.duckdns.org/api/ws/:path*" 
       }
     ]
   } 
